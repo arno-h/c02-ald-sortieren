@@ -1,14 +1,14 @@
-﻿package experiment;
+﻿package at.campus02.ald.sortieren.experiment;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import algorithmen.HeapSorter;
-import algorithmen.IntegerSorter;
-import algorithmen.MergeSorter;
-import algorithmen.NoSorter;
-import algorithmen.QuickSorter;
-import algorithmen.QuickSorter2;
+import at.campus02.ald.sortieren.algorithmen.HeapSorter;
+import at.campus02.ald.sortieren.algorithmen.IntegerSorter;
+import at.campus02.ald.sortieren.algorithmen.MergeSorter;
+import at.campus02.ald.sortieren.algorithmen.NoSorter;
+import at.campus02.ald.sortieren.algorithmen.QuickSorter;
+import at.campus02.ald.sortieren.algorithmen.QuickSorter2;
 
 public class Experiment {
 

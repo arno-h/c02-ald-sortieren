@@ -1,4 +1,4 @@
-﻿package algorithmen;
+﻿package at.campus02.ald.sortieren.algorithmen;
 
 import java.util.Arrays;
 

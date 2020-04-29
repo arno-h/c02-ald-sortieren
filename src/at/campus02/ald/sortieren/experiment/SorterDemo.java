@@ -1,8 +1,8 @@
-package experiment;
+package at.campus02.ald.sortieren.experiment;
 
-import algorithmen.BubbleSorter;
-import algorithmen.IntegerSorter;
-import algorithmen.MergeSorter;
+import at.campus02.ald.sortieren.algorithmen.BubbleSorter;
+import at.campus02.ald.sortieren.algorithmen.IntegerSorter;
+import at.campus02.ald.sortieren.algorithmen.MergeSorter;
 
 public class SorterDemo {
 
