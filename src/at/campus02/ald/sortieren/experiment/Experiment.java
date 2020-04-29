@@ -12,7 +12,13 @@ import at.campus02.ald.sortieren.algorithmen.QuickSorter2;
 
 public class Experiment {
 
+    // für die Stoppuhr
     private long startTime;
+
+    // Anzahl der zu sortierenden Zahlen und Testdurchläufe
+    static final int ARRAY_SIZE = 15000;
+    static final int TEST_RUNS_WARMUP = 750;
+    static final int TEST_RUNS = 250;
 
     public static void main(String[] args) {
         Experiment e = new Experiment();
@@ -20,13 +26,13 @@ public class Experiment {
     }
 
     public void run() {
-        int[] rnd = setUpRandomArray(50000);
+        int[] rnd = setUpRandomArray(ARRAY_SIZE);
         testAlgorithms("Sortieren eines zufälligen Arrays", rnd);
 
-        int[] sorted = setUpAlmostSortedArray(50000);
+        int[] sorted = setUpAlmostSortedArray(ARRAY_SIZE);
         testAlgorithms("Sortieren eines fast sortierten Arrays", sorted);
 
-        int[] inv = setUpAlmostInvertedArray(50000);
+        int[] inv = setUpAlmostInvertedArray(ARRAY_SIZE);
         testAlgorithms("Sortieren eines fast vollständig invertierten Arrays", inv);
     }
 
@@ -43,12 +49,16 @@ public class Experiment {
     }
 
     public void testSorter(String name, IntegerSorter is, int[] data) {
-        startStopWatch();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < TEST_RUNS_WARMUP; i++) {
             int[] testArray = Arrays.copyOf(data, data.length);
             is.sort(testArray);
         }
-        System.out.println(name + ": " + elapsedTime());
+        startStopWatch();
+        for (int i = 0; i < TEST_RUNS; i++) {
+            int[] testArray = Arrays.copyOf(data, data.length);
+            is.sort(testArray);
+        }
+        System.out.format("%s: %.3f\n", name, elapsedTime());
     }
 
     public int[] setUpRandomArray(int size) {
@@ -90,8 +100,7 @@ public class Experiment {
         startTime = System.currentTimeMillis();
     }
 
-    public double elapsedTime() {
-        return (System.currentTimeMillis() - startTime) / 1000.0;
+    public float elapsedTime() {
+        return (System.currentTimeMillis() - startTime) / (float) TEST_RUNS;
     }
-
 }

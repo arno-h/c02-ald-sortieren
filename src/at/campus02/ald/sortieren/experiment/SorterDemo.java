@@ -19,7 +19,7 @@ public class SorterDemo {
 //		IntegerSorter sorter = new MergeSorter();
 //		IntegerSorter sorter = new QuickSorter();
 
-        int[] data = new int[]{20, 1, 26, 8, 24, 12, 42};
+        int[] data = {20, 1, 26, 8, 24, 12, 42};
         sorter.sort(data);
         print(data);
     }

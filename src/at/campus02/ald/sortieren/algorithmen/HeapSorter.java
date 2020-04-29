@@ -27,7 +27,7 @@ public class HeapSorter implements IntegerSorter {
         int cur = pos;
         while (cur * 2 + 1 < size) {        // Solange Kinder existieren
             int min = maxChild(data, cur, size);
-            if (data[min] <= data[cur]) {    // Person ist bereits an richtiger Stelle
+            if (data[min] <= data[cur]) {   // Person ist bereits an richtiger Stelle
                 break;
             }
             swap(data, min, cur);    // sonst tauschen
