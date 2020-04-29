@@ -5,13 +5,12 @@ import java.util.Random;
 /**
  * QuickSort, Variante 1
  * <p>
- * In dieser Implementierung wird das Array vorher zufällig durchgemischt.
+ * In dieser Implementierung wird immer das erste Element als Pivot-Element genommen.
  * Es wird nur eine while()-Schleife beim Sortieren für alle drei Fälle verwendet.
  */
 public class QuickSorter implements IntegerSorter {
 
     public void sort(int[] data) {
-        shuffle(data);
         sort(data, 0, data.length - 1);
     }
 
@@ -47,17 +46,5 @@ public class QuickSorter implements IntegerSorter {
         int help = data[pos1];
         data[pos1] = data[pos2];
         data[pos2] = help;
-    }
-
-    /**
-     * Array durchmischen
-     *
-     * @param data Integer-Array
-     */
-    private void shuffle(int[] data) {
-        Random r = new Random();
-        for (int i = data.length - 1; i > 0; i--) {
-            swap(data, i, r.nextInt(i + 1));
-        }
     }
 }

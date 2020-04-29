@@ -36,17 +36,18 @@ public class QuickSorter2 implements IntegerSorter {
         swap(data, start, pvPos);
 
         int pivot = data[start];    // Pivot-Element ist nun wieder das erste Element
-        int i = start + 1;            // Start deshalb beim zweiten Element
+        int i = start + 1;          // Start deshalb beim zweiten Element
         int j = end;
         while (true) {
-            while (i <= end && data[i] <= pivot) {     // Nächstes Element größer Pivot von vorne her suchen
+            while (i <= end && data[i] <= pivot) {  // Nächstes Element größer Pivot von vorne her suchen
                 i++;
             }
-            while (j >= i && data[j] >= pivot) { // Nächstes Element kleiner Pivot von hinten her suchen
+            while (j >= i && data[j] >= pivot) {    // Nächstes Element kleiner Pivot von hinten her suchen
                 j--;
             }
             // Haben sich i & j überkreuzt?
             if (i >= j) {
+                swap(data, start, j);               // Pivot-Element mit Element an Position j tauschen
                 break;
             }
             // Tauschen
@@ -54,7 +55,6 @@ public class QuickSorter2 implements IntegerSorter {
             i++;
             j--;
         }
-        swap(data, start, j);                // Pivot-Element mit Element an Position j tauschen
 
         // Beide Hälften rekursiv sortieren
         sort(data, start, j - 1);

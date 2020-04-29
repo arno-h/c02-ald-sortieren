@@ -3,12 +3,7 @@ package at.campus02.ald.sortieren.experiment;
 import java.util.Arrays;
 import java.util.Random;
 
-import at.campus02.ald.sortieren.algorithmen.HeapSorter;
-import at.campus02.ald.sortieren.algorithmen.IntegerSorter;
-import at.campus02.ald.sortieren.algorithmen.MergeSorter;
-import at.campus02.ald.sortieren.algorithmen.NoSorter;
-import at.campus02.ald.sortieren.algorithmen.QuickSorter;
-import at.campus02.ald.sortieren.algorithmen.QuickSorter2;
+import at.campus02.ald.sortieren.algorithmen.*;
 
 public class Experiment {
 
@@ -39,6 +34,7 @@ public class Experiment {
     public void testAlgorithms(String name, int[] base) {
         System.out.println(name);
         testSorter("Base-Time (no sort)", new NoSorter(), base);
+        testSorter("Base-Time (built-in)", new BuiltInSorter(), base);
 // den lassen wir aus: O(n²)! --> sonst Anzahl in run()-Funktion ändern
 //		testSorter("BubbleSort", new BubbleSorter(), base);
         testSorter("HeapSort", new HeapSorter(), base);
