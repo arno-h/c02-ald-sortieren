@@ -1,4 +1,4 @@
-﻿package at.campus02.ald.sortieren.algorithmen;
+package at.campus02.ald.sortieren.algorithmen;
 
 public interface IntegerSorter {
 

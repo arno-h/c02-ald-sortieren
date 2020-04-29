@@ -1,4 +1,4 @@
-﻿package at.campus02.ald.sortieren.experiment;
+package at.campus02.ald.sortieren.experiment;
 
 import java.util.Arrays;
 import java.util.Random;
